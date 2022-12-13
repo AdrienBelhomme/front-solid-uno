@@ -81,6 +81,11 @@ const App = () => {
 
   console.log(card)
 
+  const removeDot = () => {
+    console.log('clicked')
+    setCard([...card, {read: false}])
+  }
+
   
 
   return (
