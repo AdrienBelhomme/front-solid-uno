@@ -37,6 +37,13 @@ export default defineConfig({
         manrope: 'Manrope',
         sans: 'Source Sans Pro',
         mono: ['Fira Code', 'Fira Mono:400,700'],
+        jakarta: [
+          {
+            name: 'Plus Jakarta Sans',
+            weights: ['500', '800'],
+            italic: true,
+          },
+        ]
       },
     }),
     presetBetterNestedColors({
@@ -224,6 +231,32 @@ export default defineConfig({
           ':dark': 'crust-macchiato',
           ':light': 'crust-latte',
         },
+        grayish: {
+          DEFAULT: 'hsl(210, 60%, 98%)',
+        },
+        grayish2: {
+          DEFAULT: 'hsl(211, 68%, 94%)',
+        },
+        grayish3: {
+          DEFAULT: 'hsl(205, 33%, 90%)',
+        },
+        grayish4: {
+          DEFAULT: 'hsl(219, 14%, 63%)',
+        },
+        grayish5: {
+          DEFAULT: 'hsl(219, 12%, 42%)',
+        },
+        grayish6: {
+          DEFAULT: 'hsl(224, 21%, 14%)',
+        },
+        bluebg: {
+          DEFAULT: 'hsl(219, 85%, 26%)',
+        },
+        reddot: {
+          DEFAULT: 'hsl(1, 90%, 64%)',
+        },
+
+        
       }
 
     }),
