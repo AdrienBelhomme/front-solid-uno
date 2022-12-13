@@ -4,14 +4,14 @@ import Angela from "./assets/avatar-angela.png";
 import Rizky from "./assets/avatar-rizky.png";
 
 const Card = (props) => (
-  <div class={`${props.bg} rounded p-10`}>
+  <div class={`${props.bg} rounded p-16`}>
     <div class="flex">
       <img src={props.image} alt="random" class="w-50 h-50 rounded" />
       <div class="pl-4 flex flex-col">
         <p class="text-grayish6 font-200 text-4 font-jakarta relative">
           <span class="font-bold">{props.name}</span>
           <span class="text-grayish5"> {props.action} </span>
-          <span class="font-500 text-grayish5 hover:text-bluebg">
+          <span class="font-800 text-grayish5 hover:text-bluebg">
             <a href="#"> {props.text}</a>
           </span>
           {props.read && (
@@ -121,7 +121,7 @@ const App = () => {
   
 
   return (
-    <div class="p-1rem bg-white">
+    <div class="p-1rem md:p-2.5rem bg-white">
       <div class="flex justify-between text-5 align-center">
         <div class="text-black font-bold flex align-center mb-4 items-start">
           <p class="pr-2 font-jakarta text-bold">Notifications</p>
@@ -135,7 +135,7 @@ const App = () => {
       </div>
       <For each={card()}>
         {(cards, i) => (
-          <div class="mt-5">
+          <div class="mt-3 md:mt-2">
             <Card
               name={cards.name}
               image={cards.image}
