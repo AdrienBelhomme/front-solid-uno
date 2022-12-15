@@ -2,23 +2,33 @@ import { For, createSignal, createEffect } from "solid-js";
 import Avatar from "./assets/avatar-mark.png";
 import Angela from "./assets/avatar-angela.png";
 import Rizky from "./assets/avatar-rizky.png";
+import Kimberly from "./assets/avatar-kimberly.png";
+import Anna from "./assets/avatar-anna.png";
+import chess from "./assets/image-chess.png";
 
 const Card = (props) => (
-  <div class={`${props.bg} rounded p-16`}>
+  <div class={`${props.bg} rounded-md p-16`}>
     <div class="flex">
-      <img src={props.image} alt="random" class="w-50 h-50 rounded" />
+      <img src={props.image} alt="random" class="w-45 h-45 rounded" />
       <div class="pl-4 flex flex-col">
-        <p class="text-grayish6 font-200 text-4 font-jakarta relative">
+        
+        <div class="text-grayish6 font-200 text-4 font-jakarta relative">
+        <p class="relative">
           <span class="font-bold">{props.name}</span>
           <span class="text-grayish5"> {props.action} </span>
           <span class="font-800 text-grayish5 hover:text-bluebg">
             <a href="#"> {props.text}</a>
           </span>
+          {props.link && <span class="font-800 text-grayish5 hover:text-bluebg">
+            <a href="#"> {props.link}</a>
+          </span>}
           {props.read && (
             <span class="w-8 h-8 bg-reddot rounded-full border-gray-50 absolute mt2 ml-2" />
           )}
-        </p>
+          </p>
+        </div>
         <p class="text-grayish4 font-200 text-4">{props.time}</p>
+        {props.picture && <img src={props.picture} alt="random" class="w-20 h-20 rounded" />}
         <div>
           {props.message && (
             <p class="mt-2 text-grayish5 font-200 text-4 border border-grayish2 rounded p-12">
@@ -38,46 +48,68 @@ const App = () => {
       name: "Mark Cat",
       action: "reacted to your recent post",
       text: "My first tournament today!",
+      link: "",
       time: "1m ago",
       bg: "bg-grayish",
       read: true,
+      picture: "",
     },
     {
       image: Avatar,
       name: "Henry Maru",
       action: "reacted to your recent post",
       text: "My first tournament today!",
+      link: "",
       time: "19m ago",
       bg: "bg-grayish",
       read: true,
+      picture: "",
     },
     {
-      image: Avatar,
-      name: "Harry Cat",
-      action: "reacted to your recent post",
-      text: "My first tournament today!",
+      image: Anna,
+      name: "Anna Kim",
+      action: "left the group",
+      text: "",
+      link: "chess club",
       time: "5m ago",
       bg: "bg-grayish",
       read: true,
+      picture: "",
     },
     {
       image: Angela,
       action: "followed you",
       name: "Angela Gray",
       text: "",
+      link: "",
       time: "5m ago",
       bg: "bg-white",
       read: false,
+      picture: "",
     },
     {
       image: Rizky,
       action: "sent you a private message",
       name: "Rizky Hasanuddin",
       text: "",
+      link: "",
       time: "5 days ago",
       bg: "bg-white",
       read: false,
       message: "lorem ipsum dolor sit amet. lorem ipsum dolor sit amet...",
+      picture: "",
+    },
+    {
+      image: Kimberly,
+      action: "commented on your picture",
+      name: "Kimberly Smith",
+      text: "",
+      link: "",
+      time: "5 days ago",
+      bg: "bg-white",
+      read: false,
+      message: "",
+      picture: chess,
     },
   ]);
 
@@ -145,6 +177,8 @@ const App = () => {
               read={cards.read}
               action={cards.action}
               message={cards.message}
+              picture={cards.picture}
+              link={cards.link}
             />
           </div>          
         )}
